@@ -5,7 +5,7 @@ end
 
 def deal_card
   # code #deal_card here
-  rand(1..11)
+  card = rand(1..11)
 end
 
 def display_card_total(card_total)
@@ -20,7 +20,7 @@ end
 
 def get_user_input
   # code #get_user_input here
-  num = gets
+  num = gets.chomp
 end
 
 def end_game(card_total)
@@ -30,12 +30,11 @@ end
 
 def initial_round
   # code #initial_round here
-  deal_card
-  deal_card
-  display_card_total
-  deal_card
-  display_card_total
-  
+  card_one = deal_card
+  card_two = deal_card
+  card_total = card_one + card_two
+  display_card_total(card_total)
+  return card_total
 end
 
 def hit?(num)
